@@ -818,7 +818,6 @@
 /Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Client/obj/Debug/net7.0/staticwebassets.build.json
 /Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Client/obj/Debug/net7.0/staticwebassets.development.json
 /Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Client/obj/Debug/net7.0/scopedcss/Shared/MainLayout.razor.rz.scp.css
-/Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Client/obj/Debug/net7.0/scopedcss/Shared/NavMenu.razor.rz.scp.css
 /Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Client/obj/Debug/net7.0/scopedcss/bundle/TazosStore.Client.styles.css
 /Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Client/obj/Debug/net7.0/scopedcss/projectbundle/TazosStore.Client.bundle.scp.css
 /Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Client/obj/Debug/net7.0/TazosStore.Client.csproj.CopyComplete
