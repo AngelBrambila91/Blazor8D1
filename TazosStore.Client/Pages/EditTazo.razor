@@ -1,19 +1,28 @@
-﻿@page "/tazo"
+﻿@page "/tazo/{id:int}"
 @using Models
+@inject NavigationManager NavigationManager
 <PageTitle>New Tazo</PageTitle>
 <h1>Tazos Catalog</h1>
 <h3>New Tazo</h3>
 
-<div class= "row">
+<div class="row">
     <div class="col-sm-4">
-        <EditForm Model="@tazo">
+        <EditForm Model="@tazo" OnValidSubmit="HandleSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
             <div class="mb-3">
                 <label for="name" class="form-label">Name: </label>
                 <InputText id="name" @bind-Value="tazo.Name" class="form-control"></InputText>
             </div>
             <div class="mb-3">
                 <label for="material" class="form-label">Material: </label>
-                <InputText id="material" @bind-Value="tazo.Material" class="form-control"></InputText>
+                <InputSelect id="material" @bind-Value="tazo.Material" class="form-select">
+                    <option value="" selected>Select Material</option>
+                    <option value="Plastic">Plastic</option>
+                    <option value="Metallix">Metallix</option>
+                    <option value="Gum">Gum</option>
+                    <option value="Wood">Wood</option>
+                </InputSelect>
             </div>
             <div class="mb-3">
                 <label for="serialnumber" class="form-label">Serial Number: </label>
@@ -21,11 +30,21 @@
             </div>
             <div class="mb-3">
                 <label for="theme" class="form-label">Theme: </label>
-                <InputText id="theme" @bind-Value="tazo.Theme" class="form-control"></InputText>
+                <InputSelect id="theme" @bind-Value="tazo.Theme" class="form-select">
+                    <option value="" selected>Select Theme</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Light">Light</option>
+                    <option value="MuchaLucha">Mucha Lucha</option>
+                </InputSelect>
             </div>
             <div class="mb-3">
                 <label for="size" class="form-label">Size: </label>
-                <InputText id="size" @bind-Value="tazo.Size" class="form-control"></InputText>
+                <InputSelect id="size" @bind-Value="tazo.Size" class="form-select">
+                    <option value="" selected>Select a Size</option>
+                    <option value="CH">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="B">Big</option>
+                </InputSelect>
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price: </label>
@@ -35,18 +54,31 @@
                 <label for="releasedate" class="form-label">Release Date: </label>
                 <InputDate id="price" @bind-Value="tazo.ReleaseDate" class="form-control"></InputDate>
             </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
         </EditForm>
     </div>
 </div>
 @code {
-    private Tazo tazo = new () 
+    private void HandleSubmit()
     {
-        Name = string.Empty,
-        Material = string.Empty,
-        SerialNumber = string.Empty,
-        Theme = string.Empty,
-        Size = string.Empty,
-        Price = 0.0M,
-        ReleaseDate = DateTime.UtcNow
-    };
+        TazoClient.Add(tazo);
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    private Tazo tazo = new()
+        {
+            Name = string.Empty,
+            Material = string.Empty,
+            SerialNumber = string.Empty,
+            Theme = string.Empty,
+            Size = string.Empty,
+            Price = 0.0M,
+            ReleaseDate = DateTime.UtcNow
+        };
 }

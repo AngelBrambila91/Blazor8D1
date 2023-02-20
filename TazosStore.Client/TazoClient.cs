@@ -41,8 +41,35 @@ public static class TazoClient
         }
     };
 
+    // READ
     public static Tazo[] GetTazos()
     {
         return tazos.ToArray();
-    } 
+    }
+    
+    // Create
+    public static void Add(Tazo tazo)
+    {
+        tazo.Id = tazos.Max(t => t.Id) + 1;
+        tazos.Add(tazo);
+    }
+
+    // Update
+    public static Tazo GetTazo(int id)
+    {
+        return tazos.Find(tazo => tazo.Id == id)??
+        throw new Exception("Could not find the tazo");
+    }
+
+    public static void UpdateTazo(Tazo updatedTazo)
+    {
+        Tazo existingTazo = GetTazo(updatedTazo.Id);
+        existingTazo.Name = updatedTazo.Name;
+        existingTazo.Material = updatedTazo.Material;
+        existingTazo.SerialNumber = updatedTazo.SerialNumber;
+        existingTazo.Theme = updatedTazo.Theme;
+        existingTazo.Size = updatedTazo.Size;
+        existingTazo.Price = updatedTazo.Price;
+        existingTazo.ReleaseDate = updatedTazo.ReleaseDate;
+    }
 }

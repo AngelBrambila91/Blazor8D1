@@ -1,17 +1,22 @@
 ﻿@page "/"
 @using Models
-
+@inject NavigationManager NavigationManager
 <PageTitle>Tazos Catalog</PageTitle>
 <h1>Tazos Catalog</h1>
 
-@if(tazos is null)
+@if (tazos is null)
 {
     <p>Loading ...</p>
 }
 else
 {
-<table class= "table table-striped table-bordered table-hover">
-    <thead class= "table-dark">
+    <div class="row mb-4">
+    <div class="col-sm-6">
+        <button type="button" class="btn btn-primary" @onclick="CreateTazo">New Tazo</button>
+    </div>
+</div>
+    <table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
         <th>Id</th>
         <th>Name</th>
         <th>Material</th>
@@ -23,26 +28,31 @@ else
     </thead>
     <tbody>
         @foreach (var tazo in tazos)
-        {
-            <tr>
-                <td>@tazo.Id</td>
-                <td>@tazo.Name</td>
-                <td>@tazo.Material</td>
-                <td>@tazo.SerialNumber</td>
-                <td>@tazo.Theme</td>
-                <td>@tazo.Size</td>
-                <td>@tazo.Price</td>
-                <td>@tazo.ReleaseDate.ToString("MM/dd/yyyy")</td>
-            </tr>
-        }
-    </tbody>
-</table>
+            {
+                <tr>
+                    <td>@tazo.Id</td>
+                    <td>@tazo.Name</td>
+                    <td>@tazo.Material</td>
+                    <td>@tazo.SerialNumber</td>
+                    <td>@tazo.Theme</td>
+                    <td>@tazo.Size</td>
+                    <td>@tazo.Price</td>
+                    <td>@tazo.ReleaseDate.ToString("MM/dd/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 @code
 {
     private Tazo[]? tazos;
-        protected override void OnInitialized()
-        {
-            tazos = TazoClient.GetTazos();
-        }
+    protected override void OnInitialized()
+    {
+        tazos = TazoClient.GetTazos();
+    }
+
+    private void CreateTazo()
+    { 
+        NavigationManager.NavigateTo("tazo");
+    }
 }
