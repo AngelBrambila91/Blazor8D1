@@ -73,4 +73,10 @@ public static class TazoClient
         existingTazo.Price = updatedTazo.Price;
         existingTazo.ReleaseDate = updatedTazo.ReleaseDate;
     }
+
+    public static void DeleteTazo(int id)
+    {
+        Tazo tazo = GetTazo(id);
+        tazos.Remove(tazo);
+    }
 }

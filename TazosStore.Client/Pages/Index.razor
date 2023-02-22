@@ -38,6 +38,10 @@ else
                     <td>@tazo.Size</td>
                     <td>@tazo.Price</td>
                     <td>@tazo.ReleaseDate.ToString("MM/dd/yyyy")</td>
+                    <td><button class="btn btn-primary" 
+                        @onclick="(() => EditTazo(tazo.Id))">
+                        <i class = "oi oi-pencil"></i>
+                    </button></td>
                 </tr>
             }
         </tbody>
@@ -46,6 +50,10 @@ else
 @code
 {
     private Tazo[]? tazos;
+    private void EditTazo(int id)
+    {
+        NavigationManager.NavigateTo($"/tazo/{id}");
+    }
     protected override void OnInitialized()
     {
         tazos = TazoClient.GetTazos();
