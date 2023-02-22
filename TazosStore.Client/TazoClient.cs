@@ -61,6 +61,7 @@ public static class TazoClient
         throw new Exception("Could not find the tazo");
     }
 
+    // DRY
     public static void UpdateTazo(Tazo updatedTazo)
     {
         Tazo existingTazo = GetTazo(updatedTazo.Id);

@@ -1,11 +1,18 @@
-﻿@page "/tazo/{id:int}"
+﻿@page "/tazo"
+@page "/tazo/{id:int}"
 @using Models
 @inject NavigationManager NavigationManager
-<PageTitle>New Tazo</PageTitle>
+<PageTitle>@title</PageTitle>
 <h1>Tazos Catalog</h1>
-<h3>New Tazo</h3>
+<h3>New @title</h3>
 
-<div class="row">
+@if (tazo is null)
+{
+    <p>Loading ...</p>
+}
+else
+{
+    <div class="row">
     <div class="col-sm-4">
         <EditForm Model="@tazo" OnValidSubmit="HandleSubmit">
             <DataAnnotationsValidator />
@@ -59,10 +66,22 @@
         </EditForm>
     </div>
 </div>
+}
 @code {
+    [Parameter]
+    public int? Id { get; set; }
+    private Tazo? tazo;
+    private string title = string.Empty;
     private void HandleSubmit()
     {
-        TazoClient.Add(tazo);
+        if (tazo!.Id == 0)
+        {
+            TazoClient.Add(tazo);
+        }
+        else
+        {
+            TazoClient.UpdateTazo(tazo);
+        }
         NavigationManager.NavigateTo("/");
     }
 
@@ -71,14 +90,40 @@
         NavigationManager.NavigateTo("/");
     }
 
-    private Tazo tazo = new()
+
+    protected override void OnParametersSet()
+    {
+        // If Id is not null it means UPDATE Tazo
+        if (Id is not null)
         {
-            Name = string.Empty,
-            Material = string.Empty,
-            SerialNumber = string.Empty,
-            Theme = string.Empty,
-            Size = string.Empty,
-            Price = 0.0M,
-            ReleaseDate = DateTime.UtcNow
-        };
+            Tazo foundTazo = TazoClient.GetTazo(Id.Value);
+            tazo = new()
+                {
+                    Id = foundTazo.Id,
+                    Name = foundTazo.Name,
+                    Material = foundTazo.Material,
+                    Theme = foundTazo.Theme,
+                    Size = foundTazo.Size,
+                    SerialNumber = foundTazo.SerialNumber,
+                    Price = foundTazo.Price,
+                    ReleaseDate = foundTazo.ReleaseDate
+                };
+            title = $"Edit{tazo.Name}";
+        }
+        // Otherwise it's a NEW TAZO
+        else
+        {
+            title = "New Tazo";
+            tazo = new()
+                {
+                    Name = string.Empty,
+                    Material = string.Empty,
+                    Theme = String.Empty,
+                    Size = String.Empty,
+                    SerialNumber = String.Empty,
+                    Price = 0.0M,
+                    ReleaseDate = DateTime.UtcNow
+                };
+        }
+    }
 }
