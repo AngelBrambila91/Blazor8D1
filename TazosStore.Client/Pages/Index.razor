@@ -3,7 +3,9 @@
 @inject NavigationManager NavigationManager
 <PageTitle>Tazos Catalog</PageTitle>
 <h1>Tazos Catalog</h1>
+<DeleteTazo tazo="@currentTazo" OnClose="@onDeleteModalClose">
 
+</DeleteTazo>
 @if (tazos is null)
 {
     <p>Loading ...</p>
@@ -42,6 +44,7 @@ else
                         @onclick="(() => EditTazo(tazo.Id))">
                         <i class = "oi oi-pencil"></i>
                     </button></td>
+                    <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" @onclick="(() => currentTazo = tazo)"> <i class="oi oi-x"></i> </button></td>
                 </tr>
             }
         </tbody>
@@ -50,6 +53,7 @@ else
 @code
 {
     private Tazo[]? tazos;
+    private Tazo? currentTazo;
     private void EditTazo(int id)
     {
         NavigationManager.NavigateTo($"/tazo/{id}");
@@ -63,4 +67,14 @@ else
     {
         NavigationManager.NavigateTo("/tazo/");
     }
+
+    private void onDeleteModalClose(bool acepted)
+    {
+        if(acepted)
+        {
+            TazoClient.DeleteTazo(currentTazo!.Id);
+            tazos = TazoClient.GetTazos();
+        }
+    }
+
 }

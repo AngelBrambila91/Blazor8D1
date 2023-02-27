@@ -198,13 +198,13 @@
       "mscorlib.dll": "sha256-T52Qf1cS\/UysEoWOoE2ptEJEXfGpanQX5KNLyDiLv1E=",
       "netstandard.dll": "sha256-p32h5P3QmHJ\/FGoeE6m7f5g\/8ng2PSPGZktHyMadvIs=",
       "System.Private.CoreLib.dll": "sha256-6MwQcyKbqBsoZYOcD9fQJ4iKcn1qMmWRWVEkU2LLCb0=",
-      "TazosStore.Client.dll": "sha256-PR6OZivEoygcVUhEefpha4phm4dqJHdL6kMG8+nVV14="
+      "TazosStore.Client.dll": "sha256-PG6sPR1GKS2KLH96y2QK9KGhD6p2D+IVkG6\/kPPT6fU="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "TazosStore.Client.pdb": "sha256-BIash459Oj23\/ionQ0INscSTMGduod43R5RHszssE2U="
+      "TazosStore.Client.pdb": "sha256-DgZFONJAgmt84OjZ+whhJfS2eU0j11lqab5xNQpYCOs="
     },
     "runtime": {
       "dotnet.7.0.2.68y148g2so.js": "sha256-4mh03qTse0uNR+dQ6ydExm4jJXph0RE8zGNCtF0jiNA=",

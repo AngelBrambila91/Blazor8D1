@@ -1,0 +1,42 @@
+﻿@using Models
+<h3>DeleteTazo</h3>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">@title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="Cancel">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @onclick="Confirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@code {
+    [Parameter]
+    public Tazo? tazo { get; set; }
+    [Parameter]
+    public EventCallback<bool> OnClose {get; set;}
+    public string title = string.Empty;
+        protected override void OnParametersSet()
+        {
+            title = $"Delete {tazo?.Name}";
+        }
+
+    private void Confirm()
+    {
+        OnClose.InvokeAsync(true);
+    }
+
+    private void Cancel()
+    {
+        OnClose.InvokeAsync(false);
+    }
+}
