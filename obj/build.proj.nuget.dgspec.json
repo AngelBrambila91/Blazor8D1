@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/angelbrambila/Documents/Code/Blazor8D1/build.proj": {}
+  },
+  "projects": {
+    "/Users/angelbrambila/Documents/Code/Blazor8D1/build.proj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/angelbrambila/Documents/Code/Blazor8D1/build.proj",
+        "projectName": "build",
+        "projectPath": "/Users/angelbrambila/Documents/Code/Blazor8D1/build.proj",
+        "packagesPath": "/Users/angelbrambila/.nuget/packages/",
+        "outputPath": "/Users/angelbrambila/Documents/Code/Blazor8D1/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/angelbrambila/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

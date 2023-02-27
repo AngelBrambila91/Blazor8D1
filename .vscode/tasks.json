@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/TazosStore.Client/TazosStore.Client.csproj",
+                "${workspaceFolder}/build.proj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/TazosStore.Client/TazosStore.Client.csproj",
+                "${workspaceFolder}/TazosStore.Server/TazosStore.Server.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/TazosStore.Client/TazosStore.Client.csproj"
+                "${workspaceFolder}/TazosStore.Server/TazosStore.Server.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

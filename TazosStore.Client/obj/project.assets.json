@@ -121,6 +121,9 @@
           }
         }
       },
+      "Microsoft.Build.Traversal/3.2.0": {
+        "type": "package"
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -596,6 +599,9 @@
             "related": ".xml"
           }
         }
+      },
+      "Microsoft.Build.Traversal/3.2.0": {
+        "type": "package"
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
@@ -1203,6 +1209,20 @@
         "microsoft.aspnetcore.metadata.nuspec"
       ]
     },
+    "Microsoft.Build.Traversal/3.2.0": {
+      "sha512": "vSfOSVfrz8n2C57cdx/ZNJB8ovKQfnICIfbkldWm+Z/gD1iCEomQ6hHLNe8SPm8rXbu4hVxVno6UW5qb5vvOjw==",
+      "type": "package",
+      "path": "microsoft.build.traversal/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "MSBuild-NuGet-Icon.png",
+        "Sdk/Sdk.props",
+        "Sdk/Sdk.targets",
+        "microsoft.build.traversal.3.2.0.nupkg.sha512",
+        "microsoft.build.traversal.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Configuration/7.0.0": {
       "sha512": "tldQUBWt/xeH2K7/hMPPo5g8zuLc3Ro9I5d4o/XrxvxOCA2EZBtW7bCHHTc49fcBtvB8tLAb/Qsmfrq+2SJ4vA==",
       "type": "package",
@@ -1797,7 +1817,8 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.2",
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.2"
+      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.2",
+      "Microsoft.Build.Traversal >= 3.2.0"
     ]
   },
   "packageFolders": {
@@ -1845,6 +1866,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.2, )"
+          },
+          "Microsoft.Build.Traversal": {
+            "target": "Package",
+            "version": "[3.2.0, )"
           }
         },
         "imports": [

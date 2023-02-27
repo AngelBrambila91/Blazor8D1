@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EOobv6JvWkXOrxBtJ/4IZKZuVX19WFA2gIX8z+LtFkooGSkeN1CKd2dnpgSJMp8aUjst+UDYWCQJ4IG61FeJPA==",
+  "dgSpecHash": "Vmwd8iR+rxmmwma5j8djeGY4ig9A66CXOXmsJliUxgrZl33jLBlcSGptiWXaaTFz95hIGWs1VNkq+KzNJvjLUQ==",
   "success": true,
   "projectFilePath": "/Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Client/TazosStore.Client.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "/Users/angelbrambila/.nuget/packages/microsoft.aspnetcore.components.webassembly/7.0.2/microsoft.aspnetcore.components.webassembly.7.0.2.nupkg.sha512",
     "/Users/angelbrambila/.nuget/packages/microsoft.aspnetcore.components.webassembly.devserver/7.0.2/microsoft.aspnetcore.components.webassembly.devserver.7.0.2.nupkg.sha512",
     "/Users/angelbrambila/.nuget/packages/microsoft.aspnetcore.metadata/7.0.2/microsoft.aspnetcore.metadata.7.0.2.nupkg.sha512",
+    "/Users/angelbrambila/.nuget/packages/microsoft.build.traversal/3.2.0/microsoft.build.traversal.3.2.0.nupkg.sha512",
     "/Users/angelbrambila/.nuget/packages/microsoft.extensions.configuration/7.0.0/microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "/Users/angelbrambila/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "/Users/angelbrambila/.nuget/packages/microsoft.extensions.configuration.binder/7.0.2/microsoft.extensions.configuration.binder.7.0.2.nupkg.sha512",

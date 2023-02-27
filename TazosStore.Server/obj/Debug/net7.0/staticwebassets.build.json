@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NfiFWjzagmRVHOyqq49KubI1YB35mMrgpkSnW23Y1go=",
+  "Source": "TazosStore.Server",
+  "BasePath": "_content/TazosStore.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
