@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Emq6vO9yJ3v9YePdVXY4Thh95qfcccH25+tbXZHEcMzaftdFJ3fLV+STKnYcddupZ10sKN6Yl3QmQl54TSN73A==",
+  "dgSpecHash": "qSeHKoVSgVNoITWmDimZyPf137A/tKgQEstLp+P0ow7b1wgSebTC83VEEe23H3mHHdYa1i57/Dvez808lQbIQg==",
   "success": true,
   "projectFilePath": "/Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Server/TazosStore.Server.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/angelbrambila/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/angelbrambila/.nuget/packages/minimalapis.extensions/0.10.1/minimalapis.extensions.0.10.1.nupkg.sha512",
+    "/Users/angelbrambila/.nuget/packages/minivalidation/0.7.2/minivalidation.0.7.2.nupkg.sha512"
+  ],
   "logs": []
 }

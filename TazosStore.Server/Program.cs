@@ -38,7 +38,7 @@ List<Tazo> tazos = new()
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-var group = app.MapGroup("/tazos");
+var group = app.MapGroup("/tazos").WithParameterValidation();
 
 // READ ALL
 group.MapGet("/", () => tazos);
@@ -63,4 +63,37 @@ group.MapPost("/", (Tazo tazo) =>
     tazos.Add(tazo);
     return Results.CreatedAtRoute("GetTazo", new { id = tazo.Id }, tazo);
 }).WithName("GetTazo");
+
+// PUT /tazos/{id}
+group.MapPut("/{id}", (int id, Tazo updatedTazo) =>
+{
+    Tazo? existingTazo = tazos.Find(tazo => tazo.Id == id);
+    if (existingTazo is null)
+    {
+        updatedTazo.Id = id;
+        tazos.Add(updatedTazo);
+        return Results.CreatedAtRoute("GetTazo",
+        new { id = updatedTazo.Id, updatedTazo });
+    }
+    existingTazo.Name = updatedTazo.Name;
+    existingTazo.Price = updatedTazo.Price;
+    existingTazo.Material = updatedTazo.Material;
+    existingTazo.ReleaseDate = updatedTazo.ReleaseDate;
+    existingTazo.Theme = updatedTazo.Theme;
+    existingTazo.Size = updatedTazo.Size;
+    existingTazo.SerialNumber = updatedTazo.SerialNumber;
+    return Results.NoContent();
+});
+
+// DELETE /tazos/{id}
+group.MapDelete("/{id}", (int id) =>
+                            {
+                                Tazo? tazo = tazos.Find(tazo => tazo.Id == id);
+                                if (tazo is null)
+                                {
+                                    return Results.NotFound();
+                                }
+                                tazos.Remove(tazo);
+                                return Results.NoContent();
+                            });
 app.Run();

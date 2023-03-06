@@ -24,3 +24,8 @@
 /Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Server/obj/Debug/net7.0/TazosStore.Server.pdb
 /Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Server/obj/Debug/net7.0/TazosStore.Server.genruntimeconfig.cache
 /Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Server/obj/Debug/net7.0/ref/TazosStore.Server.dll
+/Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Server/bin/Debug/net7.0/Microsoft.OpenApi.dll
+/Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Server/bin/Debug/net7.0/MinimalApis.Extensions.dll
+/Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Server/bin/Debug/net7.0/MiniValidation.dll
+/Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Server/obj/Debug/net7.0/TazosStore.Server.MvcApplicationPartsAssemblyInfo.cs
+/Users/angelbrambila/Documents/Code/Blazor8D1/TazosStore.Server/obj/Debug/net7.0/TazosStore.Server.csproj.CopyComplete
